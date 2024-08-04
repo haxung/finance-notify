@@ -14,6 +14,7 @@ func IsNotify(symbol string, curr, percent float64) bool {
 	}
 
 	if curr <= coin[0] || curr >= coin[1] || math.Abs(percent) >= coin[2] {
+		zap.L().Warn("coin notify", zap.String("symbol", symbol), zap.Float64s("data", coin))
 		return true
 	}
 
