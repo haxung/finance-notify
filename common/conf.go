@@ -32,7 +32,7 @@ type Email struct {
 }
 
 var (
-	env     = "D:/git-repository/finance-notify/env.toml"
+	env     = "env.toml"
 	EnvConf = &ENV{}
 )
 
