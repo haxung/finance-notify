@@ -38,6 +38,6 @@ func CoinResp(crs []*client.CoinResp) string {
 		}
 	}
 
-	b.WriteString("=================================\n")
+	b.WriteString("\n=================================\n")
 	return b.String()
 }
