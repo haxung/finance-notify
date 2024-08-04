@@ -11,6 +11,7 @@ import (
 	"finance-notify/client"
 	"finance-notify/common"
 	"finance-notify/mail"
+
 	"go.uber.org/zap"
 )
 
@@ -29,7 +30,7 @@ func main() {
 		listenCoin(c, cc)
 	}()
 
-	signals := make(chan os.Signal)
+	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGILL, syscall.SIGTERM)
 	<-signals
 	close(cc)
