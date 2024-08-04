@@ -1,0 +1,103 @@
+{
+    "data": [
+        {
+            "id": "bitcoin",
+            "rank": "1",
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "supply": "19733293.0000000000000000",
+            "maxSupply": "21000000.0000000000000000",
+            "marketCapUsd": "1305675955883.5029223202727778",
+            "volumeUsd24Hr": "12865223198.8947617569888769",
+            "priceUsd": "66166.1465161188719146",
+            "changePercent24Hr": "-3.8801704651817543",
+            "vwap24Hr": "67122.2333825150113723",
+            "explorer": "https://blockchain.info/"
+        },
+        {
+            "id": "ethereum",
+            "rank": "2",
+            "symbol": "ETH",
+            "name": "Ethereum",
+            "supply": "120247672.2867723400000000",
+            "maxSupply": null,
+            "marketCapUsd": "399532514763.4288705909597238",
+            "volumeUsd24Hr": "6640575006.9353365965163606",
+            "priceUsd": "3322.5800314088809981",
+            "changePercent24Hr": "-0.3372238323229790",
+            "vwap24Hr": "3316.0456003429415619",
+            "explorer": "https://etherscan.io/"
+        },
+        {
+            "id": "tether",
+            "rank": "3",
+            "symbol": "USDT",
+            "name": "Tether",
+            "supply": "114461602976.6623000000000000",
+            "maxSupply": null,
+            "marketCapUsd": "114460180965.4577404255310402",
+            "volumeUsd24Hr": "15954027275.1932080510558414",
+            "priceUsd": "0.9999875765220163",
+            "changePercent24Hr": "0.0244795960433659",
+            "vwap24Hr": "0.9998467369642712",
+            "explorer": "https://www.omniexplorer.info/asset/31"
+        },
+        {
+            "id": "binance-coin",
+            "rank": "4",
+            "symbol": "BNB",
+            "name": "BNB",
+            "supply": "166801148.0000000000000000",
+            "maxSupply": "166801148.0000000000000000",
+            "marketCapUsd": "95789745601.5158147201935728",
+            "volumeUsd24Hr": "290836914.3729144583894769",
+            "priceUsd": "574.2750979238812836",
+            "changePercent24Hr": "-2.4072539429978033",
+            "vwap24Hr": "576.1259775275935777",
+            "explorer": "https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+        },
+        {
+            "id": "solana",
+            "rank": "5",
+            "symbol": "SOL",
+            "name": "Solana",
+            "supply": "464825070.9718689000000000",
+            "maxSupply": null,
+            "marketCapUsd": "84285486270.1160935281504910",
+            "volumeUsd24Hr": "1101862827.1671430854653848",
+            "priceUsd": "181.3273240487861521",
+            "changePercent24Hr": "-4.0950234072429131",
+            "vwap24Hr": "183.7922336605869371",
+            "explorer": "https://explorer.solana.com/"
+        },
+        {
+            "id": "usd-coin",
+            "rank": "6",
+            "symbol": "USDC",
+            "name": "USDC",
+            "supply": "33706627353.8667500000000000",
+            "maxSupply": null,
+            "marketCapUsd": "33713264995.5189176627847156",
+            "volumeUsd24Hr": "1425607026.7667579922460631",
+            "priceUsd": "1.0001969239337559",
+            "changePercent24Hr": "0.0318653322256819",
+            "vwap24Hr": "1.0000378429755840",
+            "explorer": "https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        },
+        {
+            "id": "xrp",
+            "rank": "7",
+            "symbol": "XRP",
+            "name": "XRP",
+            "supply": "45404028640.0000000000000000",
+            "maxSupply": "100000000000.0000000000000000",
+            "marketCapUsd": "27982275284.6372995054715040",
+            "volumeUsd24Hr": "747115857.8538586799355354",
+            "priceUsd": "0.6162949879735011",
+            "changePercent24Hr": "2.1469848948296561",
+            "vwap24Hr": "0.6113030353200638",
+            "explorer": "https://xrpcharts.ripple.com/#/graph/"
+        }
+    ],
+    "timestamp": 1722350572862
+}

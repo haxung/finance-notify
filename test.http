@@ -1,0 +1,2 @@
+### GET coin info
+GET https://api.coincap.io/v2/assets?limit=7
