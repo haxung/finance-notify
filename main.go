@@ -51,7 +51,7 @@ func listenCoin(c client.CLI, cc chan struct{}) {
 			}
 
 			for _, price := range prices {
-				if common.IsNotify(price.Symbol, price.PriceUsd, price.Vwap24Hr) {
+				if common.IsNotify(price.Symbol, price.PriceUsd, price.ChangePercent24Hr) {
 					err = mail.Notify(mail.CoinResp(prices))
 					if err != nil {
 						zap.L().Error("Notify error", zap.Error(err))
