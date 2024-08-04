@@ -4,7 +4,7 @@ RUN addgroup -g 1001 hax
 RUN adduser hax -u 1001 -D -G hax /home/hax
 
 FROM golang:1.21 as builder
-WORKDIR /finance-notify
+WORKDIR /build
 COPY --from=root-certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o notify
@@ -13,7 +13,7 @@ FROM scratch as final
 COPY --from=root-certs /etc/passwd /etc/passwd
 COPY --from=root-certs /etc/group /etc/group
 COPY --chown=1001:1001 --from=root-certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --chown=1001:1001 --from=builder /finance-notify/notify /notify
+COPY --chown=1001:1001 --from=builder /build/notify /notify
 USER hax
 ENTRYPOINT ["/notify"]
 STOPSIGNAL SIGQUIT

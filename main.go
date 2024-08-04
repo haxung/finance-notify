@@ -10,7 +10,7 @@ import (
 
 	"finance-notify/client"
 	"finance-notify/common"
-	"finance-notify/notify"
+	"finance-notify/mail"
 	"go.uber.org/zap"
 )
 
@@ -51,7 +51,7 @@ func listenCoin(c client.CLI, cc chan struct{}) {
 
 			for _, price := range prices {
 				if common.IsNotify(price.Symbol, price.PriceUsd, price.Vwap24Hr) {
-					err = notify.Notify(notify.CoinResp(prices))
+					err = mail.Notify(mail.CoinResp(prices))
 					if err != nil {
 						zap.L().Error("Notify error", zap.Error(err))
 					}
