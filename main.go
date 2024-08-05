@@ -39,7 +39,7 @@ func main() {
 }
 
 func listenCoin(c client.CLI, cc chan struct{}) {
-	ticker := time.NewTicker(time.Duration(20) * time.Second)
+	ticker := time.NewTicker(time.Duration(common.EnvConf.Duration) * time.Second)
 	ids := strings.Join(common.EnvConf.CoinIds, ",")
 	for {
 		select {

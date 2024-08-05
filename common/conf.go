@@ -8,15 +8,16 @@ import (
 )
 
 type ENV struct {
-	Timeout int      `toml:"timeout" json:"timeout"`
-	RateURL string   `toml:"rate_url" json:"rate_url"`
-	RateIds []string `toml:"rate_ids" json:"rate_ids"`
-	CoinURL string   `toml:"coin_url" json:"coin_url"`
-	CoinIds []string `toml:"coin_ids" json:"coin_ids"`
-	Email   Email    `toml:"email" json:"email"`
-	Rate    Rate     `toml:"rate" json:"rate"`
-	Coin    Coin     `toml:"coin" json:"coin"`
-	LogConf LogConf  `toml:"log_conf" json:"log_conf"`
+	Timeout  int      `toml:"timeout" json:"timeout"`
+	Duration int      `toml:"duration" json:"duration"`
+	RateURL  string   `toml:"rate_url" json:"rate_url"`
+	RateIds  []string `toml:"rate_ids" json:"rate_ids"`
+	CoinURL  string   `toml:"coin_url" json:"coin_url"`
+	CoinIds  []string `toml:"coin_ids" json:"coin_ids"`
+	Email    Email    `toml:"email" json:"email"`
+	Rate     Rate     `toml:"rate" json:"rate"`
+	Coin     Coin     `toml:"coin" json:"coin"`
+	LogConf  LogConf  `toml:"log_conf" json:"log_conf"`
 }
 
 type Rate map[string][]float64
