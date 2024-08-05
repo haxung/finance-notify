@@ -21,6 +21,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	zap.L().Warn("init logger success!!!")
+
 	log.Println("serv start...")
 
 	c := client.NewCli(common.EnvConf.Timeout, common.EnvConf.RateURL, common.EnvConf.CoinURL)
