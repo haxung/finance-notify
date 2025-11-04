@@ -11,6 +11,7 @@ import (
 	"finance-notify/client"
 	"finance-notify/common"
 	"finance-notify/mail"
+
 	"go.uber.org/zap"
 )
 
@@ -19,6 +20,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	zap.L().Warn("init logger success!!!")
 
 	log.Println("serv start...")
 
@@ -29,7 +32,7 @@ func main() {
 		listenCoin(c, cc)
 	}()
 
-	signals := make(chan os.Signal)
+	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGILL, syscall.SIGTERM)
 	<-signals
 	close(cc)
@@ -38,7 +41,7 @@ func main() {
 }
 
 func listenCoin(c client.CLI, cc chan struct{}) {
-	ticker := time.NewTicker(time.Duration(20) * time.Second)
+	ticker := time.NewTicker(time.Duration(common.EnvConf.Duration) * time.Second)
 	ids := strings.Join(common.EnvConf.CoinIds, ",")
 	for {
 		select {
@@ -50,7 +53,7 @@ func listenCoin(c client.CLI, cc chan struct{}) {
 			}
 
 			for _, price := range prices {
-				if common.IsNotify(price.Symbol, price.PriceUsd, price.Vwap24Hr) {
+				if common.IsNotify(price.Symbol, price.PriceUsd, price.ChangePercent24Hr) {
 					err = mail.Notify(mail.CoinResp(prices))
 					if err != nil {
 						zap.L().Error("Notify error", zap.Error(err))
