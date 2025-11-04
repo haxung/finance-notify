@@ -11,14 +11,13 @@ COPY --from=root-certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o notify
 
-FROM scratch AS final
+FROM busybox AS final
 
 COPY --from=root-certs /etc/passwd /etc/passwd
 COPY --from=root-certs /etc/group /etc/group
 COPY --chown=1001:1001 --from=root-certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --chown=1001:1001 --from=builder /build/notify /notify
 
-USER root
 RUN mkdir /log && chown 1001:1001 /log
 
 VOLUME [ "/log" ]
